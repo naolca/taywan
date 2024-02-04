@@ -11,6 +11,7 @@ import userRoutes from './routes/UserRoutes';
 
 const productRoutes = require('./routes/ProductRoutes');
 const cartRoutes = require('./routes/CartRoutes');
+const reviewRoutes = require('./routes/ReviewRoutes');
 
 
 //App Varaibles 
@@ -36,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/cart', cartRoutes);
-
+app.use('/api/reviews', reviewRoutes);
 
 //exporting app
 module.exports = app

@@ -79,7 +79,24 @@ class CartController {
 
 
 
-    
+
+
+
 }
 
 export default CartController;
+
+
+// {
+//     "name":"Polo",
+//     "description":"This is a pink polo",
+//     "price":100,
+//     "discount":10,
+//     "colors":["black", "pink"],
+//     "sizes":["XL", "L"],
+//     "category":"T-shirt",
+//     "style":"Casual",
+//     "images":["www.example.come/placeholder"],
+//     "reviews":[]
+    
+//   }
