@@ -10,6 +10,7 @@ import validateEnv from '@utils/validateEnv'
 import userRoutes from './routes/UserRoutes';
 
 const productRoutes = require('./routes/ProductRoutes');
+const cartRoutes = require('./routes/CartRoutes');
 
 
 //App Varaibles 
@@ -31,8 +32,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
+
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
 
 
 //exporting app

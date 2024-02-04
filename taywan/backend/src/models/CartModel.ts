@@ -17,7 +17,7 @@ export interface Cart extends Document {
 
 const cartSchema = new Schema<Cart>(
   {
-    userId: { type: mongoose.Types.ObjectId, ref: 'User', required: true },
+    userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     items: [
       {
         productId: { type: mongoose.Types.ObjectId, ref: 'Product' },
