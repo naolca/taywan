@@ -9,7 +9,7 @@ import db from './config/db';
 import validateEnv from '@utils/validateEnv'
 import userRoutes from './routes/UserRoutes';
 
-const productRoutes = require('./routes/ProductRoutes');
+const productRoutes =  require('./routes/ProductRoutes');
 const cartRoutes = require('./routes/CartRoutes');
 const reviewRoutes = require('./routes/ReviewRoutes');
 

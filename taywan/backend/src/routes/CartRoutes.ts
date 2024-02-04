@@ -10,3 +10,5 @@ router.post('/add', authenticateUser, CartController.addToCart);
 
 
 module.exports = router;
+
+export default { router };

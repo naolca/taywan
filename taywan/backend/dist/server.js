@@ -12,4 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
     console.log(`listening on port ${PORT}`);
 });
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 //# sourceMappingURL=server.js.map
