@@ -9,7 +9,7 @@ import db from './config/db';
 import validateEnv from '@utils/validateEnv'
 import userRoutes from './routes/UserRoutes';
 
-
+const productRoutes = require('./routes/ProductRoutes');
 
 
 //App Varaibles 
@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 
 //exporting app

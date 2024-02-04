@@ -1,7 +1,9 @@
 import mongoose, { Document, Schema, SchemaDefinitionProperty } from 'mongoose';
 import { Review } from './ReviewModel';
+import { User } from './UserModel';
 
 export interface Product extends Document {
+  userId: mongoose.Types.ObjectId;
   name: string;
   description: string;
   price: number;
@@ -18,18 +20,19 @@ export interface Product extends Document {
 
 const productSchema = new Schema<Product>(
 {
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: Number, required: true },
-    discount: { type: Number, default: 0 },
-    colors: { type: [String], default: [] } as unknown as SchemaDefinitionProperty<string[], Product>,
-    sizes: { type: [String], default: [] } as unknown as SchemaDefinitionProperty<string[], Product>,
-    category: { type: String, required: true } as unknown as SchemaDefinitionProperty<string, Product>,
-    style: { type: String, required: true },
-    images: { type: [String], default: [] } as unknown as SchemaDefinitionProperty<string[], Product>,
-    reviews: [{ type: mongoose.Types.ObjectId, ref: 'Review' }],
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
+  userId: { type: Schema.Types.ObjectId, ref: 'User' },
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
+  discount: { type: Number, default: 0 },
+  colors: { type: [String], default: [] },
+  sizes: { type: [String], default: [] },
+  category: { type: String, required: true },
+  style: { type: String, required: true },
+  images: { type: [String], default: [] },
+  reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }],
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 },
   { versionKey: false }
 );
