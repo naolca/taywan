@@ -1,11 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const ReviewService_1 = tslib_1.__importDefault(require("../services/ReviewService"));
+const ReviewService_1 = __importDefault(require("../services/ReviewService"));
 class ReviewController {
     static async createReview(req, res) {
+        var _a;
         try {
-            const userId = req.user?.userId; // Get user ID from the authenticated user
+            const userId = (_a = req.user) === null || _a === void 0 ? void 0 : _a.userId; // Get user ID from the authenticated user
             const productId = req.body.productId;
             const { rating, comment } = req.body;
             await ReviewService_1.default.createReview(userId, productId, rating, comment);

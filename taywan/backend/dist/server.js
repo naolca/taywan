@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 // import app from './index.ts';
-const index_1 = tslib_1.__importDefault(require("./index"));
+const index_1 = __importDefault(require("./index"));
 /*
   ===============================================================
  Importing the port set on the .env, if the port number is not set on .env or the port is being used by another server

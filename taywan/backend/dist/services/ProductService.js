@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 // services/ProductService.ts
-const ProductRepository_1 = tslib_1.__importDefault(require("../repositories/ProductRepository"));
+const ProductRepository_1 = __importDefault(require("../repositories/ProductRepository"));
 class ProductService {
     static async createProduct(productData) {
         const newProduct = await ProductRepository_1.default.createProduct(productData);

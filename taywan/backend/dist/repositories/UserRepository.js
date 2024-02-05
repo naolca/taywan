@@ -1,7 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const UserModel_1 = tslib_1.__importDefault(require("../models/UserModel"));
+const UserModel_1 = __importDefault(require("../models/UserModel"));
 class UserRepository {
     async create(username, email, password) {
         const user = new UserModel_1.default({ username, email, password });

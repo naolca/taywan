@@ -6,7 +6,7 @@ import helmet from 'helmet'
 import bodyParser from 'body-parser';
 import db from './config/db';
 //Importing .env validation 
-import validateEnv from '@utils/validateEnv'
+
 import userRoutes from './routes/UserRoutes';
 import productRoutes from './routes/ProductRoutes';
 import cartRoutes from './routes/CartRoutes';
@@ -16,7 +16,6 @@ import reviewRoutes from './routes/ReviewRoutes';
 //App Varaibles 
 dotenv.config()
 
-validateEnv();
 
 //intializing the express app 
 const app = express(); 

@@ -1,8 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 // repositories/CartRepository.ts
-const CartModel_1 = tslib_1.__importDefault(require("../models/CartModel"));
+const CartModel_1 = __importDefault(require("../models/CartModel"));
 class CartRepository {
     static async getCartByUserId(userId) {
         return CartModel_1.default.findOne({ userId }).populate('items.productId');

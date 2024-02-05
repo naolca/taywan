@@ -1,9 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
 // routes/productRoutes.ts
-const express_1 = tslib_1.__importDefault(require("express"));
-const ProductController_1 = tslib_1.__importDefault(require("../controllers/ProductController"));
+const express_1 = __importDefault(require("express"));
+const ProductController_1 = __importDefault(require("../controllers/ProductController"));
 const AuthenticationMiddleware_1 = require("../middlewares/AuthenticationMiddleware");
 const router = express_1.default.Router();
 router.post('/create', AuthenticationMiddleware_1.authenticateUser, ProductController_1.default.createProduct);

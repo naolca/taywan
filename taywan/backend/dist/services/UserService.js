@@ -1,10 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const bcrypt_1 = tslib_1.__importDefault(require("bcrypt"));
-const jsonwebtoken_1 = tslib_1.__importDefault(require("jsonwebtoken"));
-const UserRepository_1 = tslib_1.__importDefault(require("../repositories/UserRepository"));
-const UserModel_1 = tslib_1.__importDefault(require("../models/UserModel"));
+const bcrypt_1 = __importDefault(require("bcrypt"));
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const UserRepository_1 = __importDefault(require("../repositories/UserRepository"));
+const UserModel_1 = __importDefault(require("../models/UserModel"));
 class UserService {
     static async registerUser(userData) {
         const { username, email, password } = userData;

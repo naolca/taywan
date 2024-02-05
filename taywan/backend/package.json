@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon",
-    "start": "npm run build && node src/server.ts",
-    "build": "tsc && tsc-alias"
+    "start": "node ./dist/server.js",
+    "dev": "nodemon --watch src/**/*.ts --exec 'ts-node' src/server.ts"
   },
   "keywords": [],
   "author": "",

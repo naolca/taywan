@@ -10,9 +10,7 @@ if (!MONGODB_URI) {
     throw new Error('MongoDB URI is not provided.');
 }
 
-mongoose.connect(MONGODB_URI, {
-
-});
+mongoose.connect(MONGODB_URI);
 
 const db = mongoose.connection;
 
