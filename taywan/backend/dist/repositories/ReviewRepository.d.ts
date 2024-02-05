@@ -21,23 +21,14 @@
 /// <reference types="mongoose/types/utility" />
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
+/// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import mongoose, { Document } from 'mongoose';
-import { Review } from './ReviewModel';
-export interface Product extends Document {
-    userId: mongoose.Types.ObjectId;
-    name: string;
-    description: string;
-    price: number;
-    discount: number;
-    colors: string[];
-    sizes: string[];
-    category: string;
-    style: string;
-    images: string[];
-    reviews: Review[];
-    createdAt: Date;
-    updatedAt: Date;
+declare class ReviewRepository {
+    static createReview(userId: string | undefined, productId: string, rating: number, comment: string): Promise<void>;
+    static getProductReviews(productId: string): Promise<Omit<import("../models/ReviewModel").Review & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>[]>;
+    static deleteReview(reviewId: string): Promise<void>;
+    static updateReview(reviewId: string, rating: number, comment: string): Promise<void>;
 }
-declare const ProductModel: mongoose.Model<Product, {}, {}, {}, any>;
-export default ProductModel;
+export default ReviewRepository;

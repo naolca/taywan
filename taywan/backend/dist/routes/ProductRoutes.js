@@ -9,8 +9,7 @@ const router = express_1.default.Router();
 router.post('/create', AuthenticationMiddleware_1.authenticateUser, ProductController_1.default.createProduct);
 router.get('/:id', AuthenticationMiddleware_1.authenticateUser, ProductController_1.default.getProductDetails);
 router.get('/', AuthenticationMiddleware_1.authenticateUser, ProductController_1.default.getProducts);
-module.exports = router;
 // default export ProductRoutes
-exports.default = { router };
+exports.default = router;
 //dfs
 //# sourceMappingURL=ProductRoutes.js.map

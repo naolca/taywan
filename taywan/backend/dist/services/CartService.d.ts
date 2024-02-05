@@ -21,23 +21,16 @@
 /// <reference types="mongoose/types/utility" />
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
+/// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-import mongoose, { Document } from 'mongoose';
-import { Review } from './ReviewModel';
-export interface Product extends Document {
-    userId: mongoose.Types.ObjectId;
-    name: string;
-    description: string;
-    price: number;
-    discount: number;
-    colors: string[];
-    sizes: string[];
-    category: string;
-    style: string;
-    images: string[];
-    reviews: Review[];
-    createdAt: Date;
-    updatedAt: Date;
+declare class CartService {
+    static getCartDetails(userId: string | undefined): Promise<import("../models/CartModel").Cart & {
+        _id: import("mongoose").Types.ObjectId;
+    }>;
+    static addToCart(userId: string | undefined, productId: string, quantity: number): Promise<void>;
+    static removeFromCart(userId: string | undefined, productId: string): Promise<void>;
+    static updateCartItemQuantity(userId: string | undefined, productId: string, quantity: number): Promise<void>;
+    static clearCart(userId: string | undefined): Promise<void>;
+    static updateCartTotalPrice(userId: string | undefined, totalPrice: number): Promise<void>;
 }
-declare const ProductModel: mongoose.Model<Product, {}, {}, {}, any>;
-export default ProductModel;
+export default CartService;

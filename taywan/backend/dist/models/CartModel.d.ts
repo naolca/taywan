@@ -23,21 +23,18 @@
 /// <reference types="mongoose/types/virtuals" />
 /// <reference types="mongoose/types/inferschematype" />
 import mongoose, { Document } from 'mongoose';
-import { Review } from './ReviewModel';
-export interface Product extends Document {
+export interface CartItem {
+    productId: mongoose.Types.ObjectId;
+    quantity: number;
+}
+export interface Cart extends Document {
     userId: mongoose.Types.ObjectId;
-    name: string;
-    description: string;
-    price: number;
+    items: CartItem[];
+    totalPrice: number;
     discount: number;
-    colors: string[];
-    sizes: string[];
-    category: string;
-    style: string;
-    images: string[];
-    reviews: Review[];
+    deliveryFee: number;
     createdAt: Date;
     updatedAt: Date;
 }
-declare const ProductModel: mongoose.Model<Product, {}, {}, {}, any>;
-export default ProductModel;
+declare const CartModel: mongoose.Model<Cart, {}, {}, {}, any>;
+export default CartModel;

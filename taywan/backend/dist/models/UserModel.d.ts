@@ -30,7 +30,5 @@ export interface User extends Document {
     createdAt: Date;
     updatedAt: Date;
 }
-declare const UserModel: mongoose.Model<User, {}, {}, {}, mongoose.Document<unknown, {}, User> & User & {
-    _id: mongoose.Types.ObjectId;
-}, any>;
+declare const UserModel: mongoose.Model<User, {}, {}, {}, any>;
 export default UserModel;

@@ -11,9 +11,9 @@ const db_1 = tslib_1.__importDefault(require("./config/db"));
 //Importing .env validation 
 const validateEnv_1 = tslib_1.__importDefault(require("./utils/validateEnv"));
 const UserRoutes_1 = tslib_1.__importDefault(require("./routes/UserRoutes"));
-const productRoutes = require('./routes/ProductRoutes');
-const cartRoutes = require('./routes/CartRoutes');
-const reviewRoutes = require('./routes/ReviewRoutes');
+const ProductRoutes_1 = tslib_1.__importDefault(require("./routes/ProductRoutes"));
+const CartRoutes_1 = tslib_1.__importDefault(require("./routes/CartRoutes"));
+const ReviewRoutes_1 = tslib_1.__importDefault(require("./routes/ReviewRoutes"));
 //App Varaibles 
 dotenv.config();
 (0, validateEnv_1.default)();
@@ -29,9 +29,9 @@ app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 //Routes
 app.use('/api/users', UserRoutes_1.default);
-app.use('/api/products', productRoutes);
-app.use('/api/cart', cartRoutes);
-app.use('/api/reviews', reviewRoutes);
+app.use('/api/products', ProductRoutes_1.default);
+app.use('/api/cart', CartRoutes_1.default);
+app.use('/api/reviews', ReviewRoutes_1.default);
 //exporting app
-module.exports = app;
+exports.default = app;
 //# sourceMappingURL=index.js.map

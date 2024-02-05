@@ -29,7 +29,5 @@ export interface Review extends Document {
     rating: number;
     comment: string;
 }
-declare const ReviewModel: mongoose.Model<Review, {}, {}, {}, mongoose.Document<unknown, {}, Review> & Review & {
-    _id: mongoose.Types.ObjectId;
-}, any>;
+declare const ReviewModel: mongoose.Model<Review, {}, {}, {}, any>;
 export default ReviewModel;

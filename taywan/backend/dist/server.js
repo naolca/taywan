@@ -1,6 +1,8 @@
-//Importing Libraries 
-require("dotenv").config();
-const app = require("./index");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+// import app from './index.ts';
+const index_1 = tslib_1.__importDefault(require("./index"));
 /*
   ===============================================================
  Importing the port set on the .env, if the port number is not set on .env or the port is being used by another server
@@ -9,10 +11,10 @@ running on the local macchine we are asking the app to use 3000 as the port numb
 */
 const PORT = process.env.PORT || 3000;
 //Listing to the app and running it on PORT 5000
-app.listen(PORT, async () => {
+index_1.default.listen(PORT, async () => {
     console.log(`listening on port ${PORT}`);
 });
-app.get('/', (req, res) => {
+index_1.default.get('/', (req, res) => {
     res.send('Hello World!');
 });
 //# sourceMappingURL=server.js.map

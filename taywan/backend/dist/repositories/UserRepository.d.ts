@@ -24,13 +24,13 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 declare class UserRepository {
-    create(username: string, email: string, password: string): Promise<import("mongoose").Document<unknown, {}, import("../models/UserModel").User> & import("../models/UserModel").User & {
+    create(username: string, email: string, password: string): Promise<import("../models/UserModel").User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
-    findByUsername(username: string): Promise<import("mongoose").Document<unknown, {}, import("../models/UserModel").User> & import("../models/UserModel").User & {
+    findByUsername(username: string): Promise<import("../models/UserModel").User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
-    findByEmail(email: string): Promise<import("mongoose").Document<unknown, {}, import("../models/UserModel").User> & import("../models/UserModel").User & {
+    findByEmail(email: string): Promise<import("../models/UserModel").User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
 }

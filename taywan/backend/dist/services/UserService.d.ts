@@ -24,7 +24,7 @@
 /// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
 declare class UserService {
-    static registerUser(userData: any): Promise<import("mongoose").Document<unknown, {}, import("../models/UserModel").User> & import("../models/UserModel").User & {
+    static registerUser(userData: any): Promise<import("../models/UserModel").User & {
         _id: import("mongoose").Types.ObjectId;
     }>;
     static loginUser(username: string, password: string): Promise<string>;

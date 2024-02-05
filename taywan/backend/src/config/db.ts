@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const { MONGODB_URI } = process.env;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://firaolca:%23RHp2sEx_gznCGq@cluster0.ckozrjw.mongodb.net/?retryWrites=true&w=majority';
 
 if (!MONGODB_URI) {
     throw new Error('MongoDB URI is not provided.');
