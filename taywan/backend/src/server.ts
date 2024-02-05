@@ -1,6 +1,8 @@
 //Importing Libraries 
-require("dotenv").config();
-const app = require("./index")
+// change the above line to import 
+import dotenv from 'dotenv';
+// import app from './index.ts';
+import app from './index';
 
 
 /*

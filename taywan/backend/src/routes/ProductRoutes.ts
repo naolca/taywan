@@ -11,10 +11,8 @@ router.get('/:id', authenticateUser, ProductController.getProductDetails);
 router.get('/', authenticateUser, ProductController.getProducts);
 
 
-module.exports = router;
-
 // default export ProductRoutes
-export default { router }
+export default router;
 
 
 

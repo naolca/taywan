@@ -8,7 +8,4 @@ const router = express.Router();
 router.get('/details', authenticateUser, CartController.getCartDetails);
 router.post('/add', authenticateUser, CartController.addToCart);
 
-
-module.exports = router;
-
-export default { router };
+export default router;

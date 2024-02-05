@@ -8,10 +8,9 @@ import db from './config/db';
 //Importing .env validation 
 import validateEnv from '@utils/validateEnv'
 import userRoutes from './routes/UserRoutes';
-
-const productRoutes =  require('./routes/ProductRoutes');
-const cartRoutes = require('./routes/CartRoutes');
-const reviewRoutes = require('./routes/ReviewRoutes');
+import productRoutes from './routes/ProductRoutes';
+import cartRoutes from './routes/CartRoutes';
+import reviewRoutes from './routes/ReviewRoutes';
 
 
 //App Varaibles 
@@ -40,4 +39,5 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/reviews', reviewRoutes);
 
 //exporting app
-module.exports = app
+
+export default app;
