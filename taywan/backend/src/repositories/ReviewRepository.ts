@@ -2,6 +2,11 @@
 import ReviewModel from '../models/ReviewModel';
 
 class ReviewRepository {
+
+  static async getAllReviews() {
+    return ReviewModel.find();
+  }
+
   static async createReview(userId: string | undefined, productId: string, rating: number, comment: string) {
     await ReviewModel.create({ userId, productId, rating, comment });
   }

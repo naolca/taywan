@@ -19,6 +19,8 @@ class UserService {
   }
 
   static async loginUser(username: string, password: string) {
+    console.log("here in the service");
+   
     const user = await UserRepository.findByUsername(username);
 
     if (!user) {

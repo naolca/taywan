@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+  import { Request, Response } from 'express';
 import UserService from '../services/UserService';
 
 class UserController {
@@ -14,6 +14,8 @@ class UserController {
   }
 
   static async login(req: Request, res: Response) {
+
+    console.log("here in the controller");
     try {
       const { username, password } = req.body;
       const token = await UserService.loginUser(username, password);
