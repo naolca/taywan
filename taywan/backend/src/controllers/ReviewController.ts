@@ -3,6 +3,18 @@ import { Request, Response } from 'express';
 import ReviewService from '../services/ReviewService';
 import { MyUserRequest } from '../config/definitions/MyRequest';
 class ReviewController {
+
+  static async getAllReviews(req: Request, res: Response) {
+    try {
+      const reviews = await ReviewService.getAllReviews();
+      res.json(reviews);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+
+
   static async createReview(req: MyUserRequest, res: Response) {
     try {
       const userId = req.user?.userId; // Get user ID from the authenticated user

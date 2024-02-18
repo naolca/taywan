@@ -19,6 +19,7 @@ class UserService {
         return newUser;
     }
     static async loginUser(username, password) {
+        console.log("here in the service");
         const user = await UserRepository_1.default.findByUsername(username);
         if (!user) {
             throw new Error('Invalid username or password');

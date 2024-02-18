@@ -17,6 +17,7 @@ class UserController {
         }
     }
     static async login(req, res) {
+        console.log("here in the controller");
         try {
             const { username, password } = req.body;
             const token = await UserService_1.default.loginUser(username, password);
@@ -24,6 +25,16 @@ class UserController {
         }
         catch (error) {
             console.error('Error during user login:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
+    static async getProfile(req, res) {
+        try {
+            const { user } = req.user;
+            res.json(user);
+        }
+        catch (error) {
+            console.error('Error during user profile retrieval:', error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     }

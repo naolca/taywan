@@ -11,12 +11,12 @@ const index_1 = __importDefault(require("./index"));
 running on the local macchine we are asking the app to use 3000 as the port number
   ===============================================================
 */
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 //Listing to the app and running it on PORT 5000
 index_1.default.listen(PORT, async () => {
-    console.log(`listening on port ${PORT}`);
+    console.log(`listen on port ${PORT}`);
 });
 index_1.default.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello!');
 });
 //# sourceMappingURL=server.js.map

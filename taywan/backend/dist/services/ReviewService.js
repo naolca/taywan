@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // services/ReviewService.ts
 const ReviewRepository_1 = __importDefault(require("../repositories/ReviewRepository"));
 class ReviewService {
+    static async getAllReviews() {
+        const reviews = await ReviewRepository_1.default.getAllReviews();
+        return reviews;
+    }
     static async createReview(userId, productId, rating, comment) {
         await ReviewRepository_1.default.createReview(userId, productId, rating, comment);
     }

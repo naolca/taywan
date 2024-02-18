@@ -5,6 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ReviewService_1 = __importDefault(require("../services/ReviewService"));
 class ReviewController {
+    static async getAllReviews(req, res) {
+        try {
+            const reviews = await ReviewService_1.default.getAllReviews();
+            res.json(reviews);
+        }
+        catch (error) {
+            console.error('Error fetching reviews:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
     static async createReview(req, res) {
         var _a;
         try {
