@@ -30,11 +30,24 @@ class UserController {
     }
     static async getProfile(req, res) {
         try {
-            const { user } = req.user;
+            console.log(req.user);
+            const { userId } = req.user;
+            const user = await UserService_1.default.getUserProfile(userId);
             res.json(user);
         }
         catch (error) {
             console.error('Error during user profile retrieval:', error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    }
+    static async getUserById(req, res) {
+        try {
+            const userId = req.params.id;
+            const user = await UserService_1.default.getUserProfile(userId);
+            res.json(user);
+        }
+        catch (error) {
+            console.error('Error during user retrieval:', error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     }

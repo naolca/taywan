@@ -4,12 +4,10 @@ export default function RootLayout({
     children: React.ReactNode
     }) {
     return  (
-        <html lang='eng'>
-        <body>
-        <div className="container ">
+        
+        <div className="container w-full">
             {children}
         </div>
-        </body>
-        </html>
+      
     );
     }

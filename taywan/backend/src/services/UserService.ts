@@ -36,6 +36,11 @@ class UserService {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET || 'secret');
     return token;
   }
+
+  static async getUserProfile(userId: string) {
+    const user = await UserRepository.findById(userId);
+    return user;
+  }
 }
 
 export default UserService;

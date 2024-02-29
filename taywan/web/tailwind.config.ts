@@ -6,6 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    
   ],
   theme: {
     extend: {
@@ -18,6 +19,14 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           "linear-gradient": "linear-gradient(to bottom, #ffffff 0%, #fff 50%, #000 50%, #000000 100%)",
           
+      },
+      colors: {
+        "background": "#F2F0F1",
+      },
+      fontFamily: {
+        header: ["Bebas Neue", "sans-serif"],
+        body: ["M PLUS 1p", "sans-serif"],
+        
       },
       
     },

@@ -31,6 +31,10 @@ class UserService {
         const token = jsonwebtoken_1.default.sign({ userId: user._id }, process.env.JWT_SECRET || 'secret');
         return token;
     }
+    static async getUserProfile(userId) {
+        const user = await UserRepository_1.default.findById(userId);
+        return user;
+    }
 }
 exports.default = UserService;
 //# sourceMappingURL=UserService.js.map

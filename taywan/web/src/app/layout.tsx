@@ -2,7 +2,7 @@ import "./globals.css";
 import { Provider } from "react-redux";
 
 import { Store } from "../redux/store";
-import ClientComponent from "../../components/ClientComponent";
+import ClientComponent from "../components/ClientComponent";
 
 export default function RootLayout({
   children,
@@ -10,8 +10,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body  className={" h-full"}>
+    <html lang="en" className="">
+      <body  className={""}>
         <ClientComponent>
         {children}
       </ClientComponent>

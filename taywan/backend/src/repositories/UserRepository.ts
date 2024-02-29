@@ -16,6 +16,12 @@ class UserRepository {
   async findByEmail(email: string) {
     return UserModel.findOne({ email });
   }
+
+  async findById(userId: string) {
+    console.log(userId);
+    console.log(UserModel.findById(userId));
+    return UserModel.findById(userId);
+  }
 }
 
 export default new UserRepository();

@@ -5,9 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const UserController_1 = __importDefault(require("../controllers/UserController"));
+const AuthenticationMiddleware_1 = require("../middlewares/AuthenticationMiddleware");
 const router = express_1.default.Router();
 router.post('/register', UserController_1.default.register);
 router.post('/login', UserController_1.default.login);
-router.get('/profile', UserController_1.default.getProfile);
+router.get('/profile', AuthenticationMiddleware_1.authenticateUser, UserController_1.default.getProfile);
+router.get('/:id', UserController_1.default.getUserById);
 exports.default = router;
 //# sourceMappingURL=UserRoutes.js.map

@@ -1,8 +1,14 @@
 'use client';
 import { useLoginMutation } from "@/redux/slices/auth_slice";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setToken } from "@/redux/slices/auth_state_slice";
 export default function Login() {
 
   const [login, { data, error, isLoading }] = useLoginMutation();
+
+  const router = useRouter();
+  const dispatch = useDispatch();
 
 
   const handleSubmit = (e:any) => {
@@ -21,7 +27,10 @@ export default function Login() {
     return <div>Error</div>;
   }
   if (data) {
-    return <div>Success: {data}</div>;
+    // dispatch(setToken(data.token));
+    localStorage.setItem('token', data.token);
+    router.push('/homepage');
+    return <div>Success:</div>;
   }
 
 

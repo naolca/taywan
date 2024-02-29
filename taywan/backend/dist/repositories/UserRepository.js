@@ -16,6 +16,11 @@ class UserRepository {
     async findByEmail(email) {
         return UserModel_1.default.findOne({ email });
     }
+    async findById(userId) {
+        console.log(userId);
+        console.log(UserModel_1.default.findById(userId));
+        return UserModel_1.default.findById(userId);
+    }
 }
 exports.default = new UserRepository();
 //# sourceMappingURL=UserRepository.js.map
